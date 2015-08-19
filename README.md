@@ -10,6 +10,8 @@ As a bonus, it includes the Stripe Checkout quickstart example.
 * `createdb gif2db`
 * `rake db:migrate`
 * `rake db:seed`
+* `bundle exec figaro install`
+* Add the needed keys to `config/application.yml` (amazon_access_key, amazon_secret_key, amazon_region, amazon_bucket, PUBLISHABLE_KEY, SECRET_KEY)
 * `rails s`
 * Enjoy!
 
