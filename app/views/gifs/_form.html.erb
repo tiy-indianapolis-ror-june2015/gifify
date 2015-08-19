@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel">Allons-y!</h4>
+</div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= bootstrap_form_for(@gif, remote: true) do |f| %>
+          <%= f.url_field :image_url %>
+          <h6><em>or</em></h6>
+          <%= f.attachment_field :file, direct: true %>
+          <%= f.text_field :tags, :value => @gif.tag_names.join(", ") %>
+          <%= f.submit "Geronimo!", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

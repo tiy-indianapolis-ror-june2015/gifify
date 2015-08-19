@@ -1,0 +1,14 @@
+<% @gifs.each_slice(4) do |row| %>
+  <div class="row">
+    <% row.each do |gif| %>
+      <div class="col-xs-3">
+        <% if gif.file.blank? %>
+          <%= link_to image_tag(gif.image_url, :class => "img-responsive"), gif_path(gif), "data-toggle" => "modal", "data-target" => "#defaultModal" %>
+        <% else %>
+          <%= link_to image_tag(attachment_url(gif, :file, :fit, 300, 300), :class => "img-responsive"), gif_path(gif), "data-toggle" => "modal", "data-target" => "#defaultModal" %>
+        <% end %>
+        <p class="text-center"><strong>Total votes:</strong> <%= gif.total_score %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

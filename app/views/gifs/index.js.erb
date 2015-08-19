@@ -1,0 +1,9 @@
+$('#gif_list').html('<%= escape_javascript( render "gif_list" ) %>');
+<% if params[:tag] && !params[:tag].empty? %>
+  $('#tag').html('<p>Gifs tagged with: <%= params[:tag] %>. <%= link_to "Clear", gifs_path, remote:true %>');
+<% elsif params[:user] && !params[:user].empty? %>
+  $('#tag').html('<p>Gifs added by: <%= params[:user] %>. <%= link_to "Clear", gifs_path, remote:true %>');
+<% else %>
+  $('#tag').html('');
+<% end %>
+$('#defaultModal').modal('hide');

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row" id="tag">
+
+  </div>
+</div>
+
+<div class="container" id="gif_list">
+  <%= render "gif_list" %>
+</div>
+
+<% if @gifs.blank? %>
+<div id="no_gifs">
+  <h1>I suspect you forgot to run <code>rake db:seed</code></h1>
+</div>
+<% end %>
+
+<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>

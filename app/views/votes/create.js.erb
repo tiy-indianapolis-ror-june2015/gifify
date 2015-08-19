@@ -1,0 +1,4 @@
+$('#gif_list').html('<%= escape_javascript( render "gifs/gif_list" ) %>');
+$('#photo_meta').html('<%= escape_javascript( render :partial => "gifs/photo_meta", :locals => {:gif => @gif} ) %>');
+$('#tag').html('');
+$("html, body").animate({ scrollTop: -70 }, "slow");

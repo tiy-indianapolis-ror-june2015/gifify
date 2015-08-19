@@ -1,0 +1,7 @@
+<% if @current_user %>
+  <li><%= link_to "New Gif", new_gif_path, remote: true %></li>
+  <li><%= link_to "Log Out", user_session_path(:id => 1), method: :delete, remote: true %></li>
+<% else %>
+  <li><%= link_to "Log In", new_user_session_path, remote: true %></li>
+  <li><%= link_to "Sign Up", new_user_path, remote: true %></li>
+<% end %>
